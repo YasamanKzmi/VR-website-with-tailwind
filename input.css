@@ -1,0 +1,104 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@layer base{
+   h5 {
+     @apply absolute font-sans text-2xl text-white uppercase bottom-7 left-7 group-hover:scale-110 group-hover:text-black group-hover:font-bold;
+   }
+}
+
+@layer base{
+    .item-transparent{
+        @apply absolute top-0 bottom-0 left-0 right-0 bg-gradient-to-b from-transparent to-gray-900;
+    }
+}
+
+
+#hero{
+    background-image: url('../images/vrpic2.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+}
+
+@media(max-width:750px){
+    #hero{
+    background-image: url('../images/vrpic-6.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    }
+    
+}
+
+.hamburgerBtn{
+    width: 30px;
+    height: 20px;
+    z-index: 101;
+
+}
+
+
+.hamburger-top, 
+.hamburger-middle, 
+.hamburger-bottom {
+    content: '';
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 25px;
+    height: 3px;
+    background-color: white;
+
+}
+
+.hamburger-middle{
+    transform: translateY(7px);
+}
+
+.hamburger-bottom{
+    transform: translateY(14px);
+}
+
+.open .hamburger-middle{
+    display: none;
+    transition:all 0.5s;
+    
+}
+
+.open .hamburger-bottom{
+    transform: rotate(-45deg) translateY(6px) translateX(-6px);
+    z-index: 100;
+    transition:all 0.5s;
+}
+.open .hamburger-top{
+    transform: rotate(45deg) translateY(6px) translateX(6px);
+    z-index: 100;
+    transition:all 0.5s;
+
+}
+
+
+
+.mblMenuActive{
+    display: flex;
+    z-index:100;
+    animation-name: animation1;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    
+    
+
+}
+
+@keyframes animation1{
+    0%{
+        top: -300px;
+
+    }
+    100%{
+        top: 0px;
+    }
+
+}
